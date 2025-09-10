@@ -147,18 +147,18 @@ class _ProfilePageState extends State<ProfilePage> {
           context: context,
           builder: (context) => AlertDialog(
             title: const Text('สำเร็จ'),
-            content: Text('ลบข้อมูลสำเร็จ'),
+            content: Text('แก้ไขข้อมูลสำเร็จ'),
             actions: [
               FilledButton(
                 onPressed: () {
-                  Navigator.popUntil(context, (route) => route.isFirst);
+                  Navigator.pop(context);
                 },
                 child: const Text('ปิด'),
               ),
             ],
           ),
         ).then((s) {
-          Navigator.popUntil(context, (route) => route.isFirst);
+          Navigator.pop(context);
         });
       } else {
         Navigator.pop(context);
@@ -166,7 +166,7 @@ class _ProfilePageState extends State<ProfilePage> {
           context: context,
           builder: (context) => AlertDialog(
             title: const Text('ผิดพลาด'),
-            content: Text('ลบข้อมูลไม่สำเร็จ'),
+            content: Text('แก้ข้อมูลไม่สำเร็จ'),
             actions: [
               FilledButton(
                 onPressed: () {

@@ -85,13 +85,6 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                errorMessage,
-                style: TextStyle(color: Colors.red[700]),
-              ),
-            ),
           ],
         ),
       ),
@@ -126,13 +119,17 @@ class _LoginPageState extends State<LoginPage> {
           // log(value.body);
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Showtrip(cid:customerLoginPostResponse.customer.idx)),
+            MaterialPageRoute(
+              builder: (context) =>
+                  Showtrip(cid: customerLoginPostResponse.customer.idx),
+            ),
           );
         })
         .catchError((error) {
           log('Error $error');
         });
   }
+
   void register() {
     setState(() {
       Navigator.push(

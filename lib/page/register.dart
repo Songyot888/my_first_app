@@ -185,6 +185,10 @@ class _nameState extends State<RegisterPage> {
           .catchError((error) {
             log('Error $error');
           });
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => LoginPage()),
+      );
     }
   }
 
